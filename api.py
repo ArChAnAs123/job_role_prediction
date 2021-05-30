@@ -15,7 +15,7 @@ app = flask.Flask(__name__, template_folder='template')
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/',methods=['POST'])
@@ -24,7 +24,7 @@ def predict():
          input_variables = [np.array(input)]
          prediction = m.prediction(input_variables)
 
-         return flask.render_template('home.html', result = prediction )    
+         return flask.render_template('index.html', result = prediction )    
 
     
 
